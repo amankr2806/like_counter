@@ -1,5 +1,5 @@
 import { AppDispatch, RootState } from "@/store";
-import { fetchUsers } from "@/store/userSlice";
+import { Users } from "@/store/userSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ButtonView from "./ButtonView";
@@ -9,10 +9,10 @@ const UserDetail: React.FC = () => {
   const { users, loading, error } = useSelector(
     (state: RootState) => state.user
   );
-
+ 
   useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
+    dispatch(Users());
+  }, []);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;

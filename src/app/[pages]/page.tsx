@@ -1,9 +1,10 @@
 'use client'
-import { fetchUserById } from '@/store/userSlice';
+import { fetchUserById } from '@/store/userIdSlice';
 import { RootState, AppDispatch } from '@/store';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import Counter from '@/components/Counter';
+
 
 interface UserDetailPageProps {
   params: any;
@@ -12,10 +13,8 @@ interface UserDetailPageProps {
 const UserDetailPage: React.FC<UserDetailPageProps> = ({ params }) => {
   const dispatch = useDispatch<AppDispatch>();
   const id = params.pages;
-//   console.log(id);
-  const { users, loading, error } = useSelector((state: RootState) => state.user);
+  const { users, loading, error } = useSelector((state: RootState) => state.userId);
   const user = users.find((user) => user.id === Number(id));
-  // console.log(user);
 
   useEffect(() => {
     if (!user) {
