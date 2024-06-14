@@ -35,19 +35,6 @@ const userIdSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
       builder
-        // .addCase(Users.pending, (state) => {
-        //   state.loading = true;
-        //   state.error = null;
-        // })
-        // .addCase(Users.fulfilled, (state, action) => {
-        //   state.loading = false;
-        //   state.error = null;
-        //   state.users = action.payload;
-        // })
-        // .addCase(Users.rejected, (state, action) => {
-        //   state.loading = false;
-        //   state.error = action.error.message ?? "Error fetching users";
-        // });
       .addCase(fetchUserById.pending, (state) => {
         state.loading = true;
         state.error = null;
