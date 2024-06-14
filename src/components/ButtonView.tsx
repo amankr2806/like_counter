@@ -11,7 +11,7 @@ const ButtonView: React.FC<ButtonViewProps> = ({ userId }) => {
   const router = useRouter();
 
  
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = () => {
     
     router.push(`/${userId}`);
   };
