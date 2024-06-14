@@ -19,7 +19,7 @@ const UserDetail: React.FC = () => {
   return (
     <div>
       <h2>Users:</h2>
-      <ul>
+      <div>
         {users.map((user) => (
           <div
             key={user.id}
@@ -30,7 +30,7 @@ const UserDetail: React.FC = () => {
             {user.id} {user.name} {user.email} <ButtonView userId={user.id} />
           </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

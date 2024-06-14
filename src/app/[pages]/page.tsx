@@ -15,7 +15,7 @@ const UserDetailPage: React.FC<UserDetailPageProps> = ({ params }) => {
 //   console.log(id);
   const { users, loading, error } = useSelector((state: RootState) => state.user);
   const user = users.find((user) => user.id === Number(id));
-  console.log(user);
+  // console.log(user);
 
   useEffect(() => {
     if (!user) {
