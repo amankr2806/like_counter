@@ -12,7 +12,7 @@ interface UserDetailPageProps {
 
 const UserDetailPage: React.FC<UserDetailPageProps> = ({ params }) => {
   const dispatch = useDispatch<AppDispatch>();
-  const id = params.pages;
+  const id = params.id;
   const { users, loading, error } = useSelector((state: RootState) => state.userId);
   const user = users.find((user) => user.id === Number(id));
 
@@ -20,7 +20,7 @@ const UserDetailPage: React.FC<UserDetailPageProps> = ({ params }) => {
     if (!user) {
       dispatch(fetchUserById(Number(id)));
     }
-  }, [dispatch, id]);
+  }, [id]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
