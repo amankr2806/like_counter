@@ -3,7 +3,6 @@ import counterSlice from "./conterSlice";
 import userSlice from "./userSlice";
 import userIdSlice from "./userIdSlice";
 
-
 const rootReducer = combineReducers({
   counter: counterSlice.reducer,
   user: userSlice.reducer,

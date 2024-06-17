@@ -1,15 +1,14 @@
 import { useRouter } from "next/navigation";
 
 const HomeButton = () => {
+  const router = useRouter();
 
-    const router = useRouter()
-
-    const handleHome = () => {
-        router.push("/");
-    }
+  const handleHome = () => {
+    router.push("/");
+  };
   return (
     <>
-    <button onClick={handleHome}>Home</button>
+      <button onClick={handleHome}>Home</button>
     </>
   );
 };

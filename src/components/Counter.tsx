@@ -5,22 +5,27 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { RootState } from "@/store";
 
-const Counter = () => {
-  const counterVal  = useSelector((state: RootState) => state.counter.counterVal);
+interface CounterProps {
+  userId: number;
+}
 
+const Counter: React.FC<CounterProps> = ({ userId }) => {
+  const counterVal = useSelector(
+    (state: RootState) => state.counter.counterVal[userId] || 0
+  );
 
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
-    dispatch(counterActions.increment());
+    dispatch(counterActions.increment(userId));
   };
 
   const handleDecrement = () => {
-    dispatch(counterActions.decrement());
+    dispatch(counterActions.decrement(userId));
   };
 
   const handleReset = () => {
-    dispatch(counterActions.reset());
+    dispatch(counterActions.reset(userId));
   };
 
   return (
