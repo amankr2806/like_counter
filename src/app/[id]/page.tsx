@@ -4,6 +4,7 @@ import { RootState, AppDispatch } from '@/store';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import Counter from '@/components/Counter';
+import HomeButton from '@/components/HomeButton';
 
 
 interface UserDetailPageProps {
@@ -32,6 +33,7 @@ const UserDetailPage: React.FC<UserDetailPageProps> = ({ params }) => {
       <p>Email: {user.email}</p>
       <p>User Name: {user.username}</p>
       <Counter/>
+      <HomeButton />
     </div>
   );
 };
