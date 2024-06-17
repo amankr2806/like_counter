@@ -1,13 +1,6 @@
-"use client";
-
-// import Counter from "@/components/Counter";
+'use client';
 import UserDetail from "@/components/UserDetail";
 
 export default function Home() {
-  return (
-    <>
-      {/* <Counter /> */}
-      <UserDetail />
-    </>
-  );
+  return <UserDetail />;
 }
