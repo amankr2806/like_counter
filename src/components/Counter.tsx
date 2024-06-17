@@ -33,7 +33,7 @@ const Counter: React.FC<CounterProps> = ({ userId }) => {
       <AiFillLike size={50} onClick={handleIncrement} />
       <BiSolidDislike size={50} onClick={handleDecrement} />
       <button onClick={handleReset}>Reset</button>
-      <h3>"The Current count is:{counterVal}"</h3>
+      <h3>"The Current count is:{counterVal}</h3>
     </>
   );
 };
