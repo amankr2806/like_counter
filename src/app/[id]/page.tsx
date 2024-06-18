@@ -17,7 +17,7 @@ const UserDetailPage: React.FC<UserDetailPageProps> = ({ params }) => {
     (state: RootState) => state.userId
   );
   const user = users.find((user) => user.id === Number(id));
-
+console.log(users);
   useEffect(() => {
     if (!user) {
       dispatch(fetchUserById(id));

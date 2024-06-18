@@ -43,6 +43,7 @@ const userIdSlice = createSlice({
         state.loading = false;
         state.error = null;
         state.users = [...state.users.filter(user => user.id !== action.payload.id), action.payload];
+        // state.users = [...state.users, action.payload];
       })
       .addCase(fetchUserById.rejected, (state, action) => {
         state.loading = false;
