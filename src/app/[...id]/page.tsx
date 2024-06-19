@@ -7,17 +7,18 @@ import Counter from "@/components/Counter";
 import HomeButton from "@/components/HomeButton";
 
 interface UserDetailPageProps {
-  params: { id: string };
+  params: any;
 }
 
 const UserDetailPage: React.FC<UserDetailPageProps> = ({ params }) => {
   const dispatch = useDispatch<AppDispatch>();
+  console.log(params);
   const id = Number(params.id);
   const { users, loading, error } = useSelector(
     (state: RootState) => state.userId
   );
   const user = users.find((user) => user.id === Number(id));
-console.log(users);
+ 
   useEffect(() => {
     if (!user) {
       dispatch(fetchUserById(id));
