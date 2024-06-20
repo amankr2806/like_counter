@@ -9,13 +9,17 @@ const UserDetail: React.FC = () => {
   const { users, loading, error } = useSelector(
     (state: RootState) => state.user
   );
+  console.log(users);
  
   useEffect(() => {
+    if(users.length == 0){
     dispatch(Users());
+    }
   }, []);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
+  if(!users) return <p>No data found</p>
   return (
     <div>
       <h2>Users:</h2>
